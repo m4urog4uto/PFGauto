@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --left-menu: 200px;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}

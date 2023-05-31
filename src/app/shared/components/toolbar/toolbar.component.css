@@ -1,0 +1,11 @@
+.example-sidenav-content main {
+  padding: 1rem;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.mat-drawer-container {
+  height: 100%;
+}

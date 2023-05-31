@@ -1,0 +1,30 @@
+<div class="app-login-component">
+    <section>
+        <h1>¡Bienvenido!</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis laboriosam exercitationem quia architecto? Obcaecati mollitia, iusto optio harum aut corporis maxime voluptas esse. Vero hic ratione porro magnam quis! Excepturi!</p>
+    </section>
+    <section>
+        <h2>Iniciar sesión</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="field">
+                <mat-form-field class="w-full">
+                    <mat-label>Usuario</mat-label>
+                    <input [formControl]="userCtrl" type="text" matInput autocomplete="off" />
+                    <mat-error *ngFor="let error of userCtrl.errors | keyvalue">{{ error | controlErrorMessages }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field class="w-full">
+                    <mat-label>Contraseña</mat-label>
+                    <input [formControl]="passwordCtrl" type="password" matInput autocomplete="off" />
+                    <mat-error *ngFor="let error of userCtrl.errors | keyvalue">{{ error | controlErrorMessages }}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="flex justify-content-end">
+                <button type="submit" color="primary" mat-flat-button>
+                    Ingresar
+                </button>
+            </div>
+        </form>
+    </section>
+</div>

@@ -1,0 +1,22 @@
+<div class="app-details-course" *ngIf="courseDetail$ | async; let courseDetail">
+    <section>
+        <div class="Profile">
+            <h1>
+                {{courseDetail.courseName}}
+            </h1>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <span>
+                <b>Descripción:</b> {{ courseDetail.description }}
+            </span>
+        </div>
+        <div>
+            <span>
+                <b>Duración:</b> {{ courseDetail.duration }}
+            </span>
+        </div>
+    </section>
+</div>

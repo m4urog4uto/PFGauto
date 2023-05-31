@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.app-login-component {
+    display: flex;
+}
+
+section:nth-child(1) {
+    max-width: 389px;
+    margin-right: 50px;
+}

@@ -1,0 +1,27 @@
+<div *ngIf="inscriptionsDetail && coursesAssigned" class="app-inscriptions-detail">
+    <h1>Detalle Curso Inscripto</h1>
+    <hr>
+    <h2>{{ inscriptionsDetail.courseName }}</h2>
+    <h5>Comisión: #{{ inscriptionsDetail.commission }}</h5>
+    <h5>Duración: {{ coursesAssigned.duration }}</h5>
+    <hr>
+    <div>
+        <h6>Mentores Asignados</h6>
+        <ul>
+            <li *ngFor="let mentors of inscriptionsDetail.mentors">{{ mentors }}</li>
+        </ul>
+    </div>
+    <div>
+        <h6>Estudiantes Asignados</h6>
+        <div class="message-empty-table" *ngIf="studentsAssigned.length === 0; else studentsAssig">
+            No tiene alumnos cargados en al curso
+          </div>
+        <ng-template #studentsAssig>
+            <app-table-inscriptions
+                [items]="studentsAssigned"
+                [isAdmin]="(role$ | async) === 'Administrador'"
+                (removeStudent)="removeInscriptionStudent($event)"
+          ></app-table-inscriptions>
+        </ng-template>
+    </div>
+</div>

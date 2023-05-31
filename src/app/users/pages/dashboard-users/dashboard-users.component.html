@@ -1,0 +1,17 @@
+<div class="app-layout-container">
+    <button class="btn-add" color="primary" mat-raised-button (click)="addUser()">
+      <mat-icon>add</mat-icon>
+      Añadir Usuario
+    </button>
+  
+    <div class="message-empty-table" *ngIf="users.length === 0; else table">
+      No tiene usuarios cargados en el sistema, para agregar utilice el boton "Añadir Usuario"
+    </div>
+    <ng-template #table>
+        <app-table-user
+            [items]="users"
+            (removeUser)="removeUser($event)"
+            (editUser)="editUser($event)"
+        ></app-table-user>
+    </ng-template>
+</div>

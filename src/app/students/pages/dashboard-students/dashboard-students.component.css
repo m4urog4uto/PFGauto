@@ -1,0 +1,17 @@
+:host {
+    width: 100%;
+}
+
+.app-layout-container {
+    margin: 30px;
+}
+
+.btn-add {
+    margin-bottom: 20px;
+}
+
+.message-empty-table {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}

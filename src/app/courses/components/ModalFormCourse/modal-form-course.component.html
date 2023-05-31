@@ -1,0 +1,67 @@
+<div class="container">
+  <h1 [appFontSize]="20" mat-dialog-title>Añadir Curso</h1>
+  <form
+    [formGroup]="courseForm"
+    autocomplete="off"
+    class="form-container"
+  >
+    <section class="form-section">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input
+            [formControl]="courseNameCtrl"
+            matInput
+            placeholder="Nombre"
+            [tabIndex]="1"
+          >
+
+          <mat-error *ngFor="let error of courseNameCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descripción del Curso</mat-label>
+          <textarea matInput
+            placeholder="Descripción del Curso"
+            [formControl]="descriptionCtrl"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"></textarea>
+
+          <mat-error *ngFor="let error of descriptionCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Seleccionar Duración</mat-label>
+          <mat-select [formControl]="durationCtrl" [tabIndex]="6">
+            <mat-option *ngFor="let duration of durations" [value]="duration.value">
+              {{duration.viewValue}}
+            </mat-option>
+          </mat-select>
+      
+          <mat-error *ngFor="let error of durationCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </section>
+    <div mat-dialog-actions>
+      <button
+        mat-button
+        (click)="onClose()"
+      >Cancelar</button>
+      <button
+        mat-button
+        [mat-dialog-close]="1"
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="this.courseForm.invalid"
+      > Guardar </button>
+    </div>
+  </form>
+</div>

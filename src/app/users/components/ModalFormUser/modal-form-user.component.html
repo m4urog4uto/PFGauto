@@ -1,0 +1,113 @@
+<div class="container">
+  <h1 [appFontSize]="20" mat-dialog-title>Añadir Usuario</h1>
+  <form
+    [formGroup]="userForm"
+    autocomplete="off"
+    class="form-container"
+  >
+    <section class="form-section">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input
+            [formControl]="nameCtrl"
+            matInput
+            placeholder="Nombre"
+            [tabIndex]="1"
+          >
+
+          <mat-error *ngFor="let error of nameCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input
+            [formControl]="passwordCtrl"
+            matInput
+            type="password"
+            placeholder="Contraseña"
+            [tabIndex]="3"
+          >
+
+          <mat-error *ngFor="let error of userCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input
+            [formControl]="userCtrl"
+            matInput
+            placeholder="Nombre"
+            [tabIndex]="5"
+          >
+
+          <mat-error *ngFor="let error of userCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input
+            [formControl]="surnameCtrl"
+            matInput
+            placeholder="Nombre"
+            [tabIndex]="2"
+          >
+
+          <mat-error *ngFor="let error of surnameCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Confirmar Contraseña</mat-label>
+          <input
+            [formControl]="confirmPasswordCtrl"
+            type="password"
+            matInput
+            placeholder="Confirmar Contraseña"
+            [tabIndex]="4"
+          >
+
+          <mat-error *ngFor="let error of userCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            [formControl]="emailCtrl"
+            matInput
+            placeholder="email"
+            [tabIndex]="6"
+          >
+
+          <mat-error *ngFor="let error of emailCtrl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </section>
+    <div mat-dialog-actions>
+      <button
+        mat-button
+        (click)="onClose()"
+      >Cancelar</button>
+      <button
+        mat-button
+        [mat-dialog-close]="1"
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="this.userForm.invalid"
+      > Guardar </button>
+    </div>
+  </form>
+</div>

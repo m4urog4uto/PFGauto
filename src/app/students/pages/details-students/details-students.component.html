@@ -1,0 +1,41 @@
+<div class="app-details-students" *ngIf="studentDetail">
+    <section>
+        <div class="Profile">
+            <h1>
+                {{studentDetail.name + ' ' + studentDetail.surname}}
+            </h1>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <span>
+                <b>DNI:</b> {{ studentDetail.dni }}
+            </span>
+        </div>
+        <div>
+            <span>
+                <b>Email:</b> {{ studentDetail.email }}
+            </span>
+        </div>
+        <div>
+            <span>
+                <b>Teléfono:</b> {{ studentDetail.phone }}
+            </span>
+        </div>
+    </section>
+    <hr>
+    <section *ngIf="coursesSelected">
+        <h6>Cursos Asignados</h6>
+        <div class="message-empty-table" *ngIf="coursesSelected.length === 0; else coursesAssigned">
+            El alumno no tiene cursos asignados
+        </div>
+        <ng-template #coursesAssigned>
+            <app-table-courses-selected
+                [items]="coursesSelected"
+                [isAdmin]="(role$ | async) === 'Administrador'"
+                (removeCourse)="removeCourse($event)"
+            ></app-table-courses-selected>
+        </ng-template>
+    </section>
+</div>

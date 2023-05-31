@@ -1,0 +1,43 @@
+.app-navbar-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.left-menu-container {
+    width: var(--left-menu);
+    height: 100vh;
+    background: #77747433;
+    padding-left: 15px;
+}
+
+.user-icon {
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.user-data {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 25px;
+}
+
+i {
+    margin-right: 10px;
+}

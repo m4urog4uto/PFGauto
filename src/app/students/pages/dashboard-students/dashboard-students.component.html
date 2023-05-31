@@ -1,0 +1,19 @@
+<div class="app-layout-container">
+    <button class="btn-add" color="primary" mat-raised-button (click)="addStudentForm()">
+      <mat-icon>add</mat-icon>
+      Añadir Alumno
+    </button>
+
+    <div class="message-empty-table" *ngIf="students.length === 0; else table">
+      No tiene alumnos cargados en el sistema, para agregar utilice el boton "Añadir Alumno"
+    </div>
+    <ng-template #table>
+      <app-table
+        [items]="students"
+        [isAdmin]="(role$ | async) === 'Administrador'"
+        (removeStudent)="removeStudent($event)"
+        (editStudent)="editStudent($event)"
+      ></app-table>
+    </ng-template>
+</div>
+  

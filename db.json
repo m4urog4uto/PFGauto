@@ -1,0 +1,95 @@
+{
+  "users": [
+    {
+      "name": "Mauro",
+      "surname": "Gauto",
+      "user": "admin",
+      "password": "admin",
+      "confirmPassword": "admin",
+      "role": "Administrador",
+      "email": "m@m.com",
+      "token": "Zsdw1weqweewqeq.5984902105.995939",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Pablo",
+      "surname": "Garcia",
+      "user": "pablito",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "email": "p@g.com",
+      "role": "Cliente",
+      "token": "Zsdw1weqweewqeq.9379195443.376078"
+    }
+  ],
+  "students": [
+    {
+      "id": 2,
+      "name": "Rogelia",
+      "surname": "Buendia",
+      "dni": "42121333",
+      "email": "rogelia.buendia@gmail.com",
+      "phone": 1144322132,
+      "courseSelected": [
+        "Node JS",
+        "Angular"
+      ]
+    },
+    {
+      "id": 398892223,
+      "name": "Armando",
+      "surname": "Paredes",
+      "dni": "398892223",
+      "email": "armando.paredes@gmail.com",
+      "phone": 1132114332,
+      "courseSelected": [
+        "Ciberseguridad",
+        "Node JS"
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "courseName": "Angular JS",
+      "description": "Framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenidos por Google, que se utiliza para crear y mantener aplicaciones web de una sola página",
+      "duration": "3 meses"
+    },
+    {
+      "id": 2,
+      "courseName": "Node JS",
+      "description": "Es un entorno controlado por eventos diseñado para crear aplicaciones escalables, permitiéndote establecer y gestionar múltiples conexiones al mismo tiempo. Gracias a esta característica, no tienes que preocuparte con el bloqueo de procesos, pues no hay bloqueos.",
+      "duration": "3 meses"
+    },
+    {
+      "id": 3,
+      "courseName": "Ciberseguridad",
+      "description": "Gestiona todos los riesgos que pueden presentarse en tu organización. Visualiza de manera clara el número de riegos y toma decisiones oportunas. Conoce Más. Prueba gratis por 15 días. Sin Tarjeta de crédito. Conferencias Virtuales. Escuela Gestión Riesgos.",
+      "duration": "3 meses"
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": 2,
+      "commission": 32123,
+      "courseName": "Node JS",
+      "mentors": [
+        "Carlos Garcia",
+        "Yamila Gimenez"
+      ],
+      "students": [
+        "Rogelia Buendia",
+        "Armando Paredes"
+      ]
+    }
+  ],
+  "mentors": [
+    "Carlos Garcia",
+    "Yamila Gimenez",
+    "Juan Lopez",
+    "Ricardo Moreno",
+    "Sonia Gonzales",
+    "Nicolas Patrizi"
+  ]
+}

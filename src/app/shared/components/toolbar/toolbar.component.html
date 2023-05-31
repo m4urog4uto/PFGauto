@@ -1,0 +1,24 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <!-- SIDEBAR -->
+    <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
+      <app-navbar></app-navbar>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <!-- TOOLBAR  -->
+      <mat-toolbar color="primary">
+        <button
+          (click)="drawer.toggle()"
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a class="navbar-brand p-3">PF Gauto</a>
+      </mat-toolbar>
+    </div>
+
+    <ng-content></ng-content>    
+</mat-drawer-container>

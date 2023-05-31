@@ -1,0 +1,44 @@
+<div class="app-layout-container">
+    <button class="btn-add" color="primary" mat-raised-button (click)="addInscriptionForm()">
+      <mat-icon>add</mat-icon>
+      Añadir Inscripcion
+    </button>
+  
+    <div class="message-empty-cards" *ngIf="inscriptions.length === 0; else cards">
+      No tiene inscripciones cargadas en el sistema, para agregar utilice el boton "Añadir Inscripción"
+    </div>
+    <ng-template #cards>
+        <div class="container-cards">
+            <mat-card *ngFor="let inscription of inscriptions" class="card">
+                <mat-card-header>
+                    <mat-card-title>{{ inscription.courseName }}</mat-card-title>
+                    <mat-card-subtitle>Comisión: #{{ inscription.commission }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <div *ngFor="let mentor of inscription.mentors">
+                        <span>{{ mentor }}</span>
+                    </div>
+                    <span *ngIf="inscription.students.length === 0; else studentsQuantity">
+                        <strong>No tiene Alumnos Cargados</strong>
+                    </span>
+                    <ng-template #studentsQuantity>
+                        <span>Cantidad de Alumnos: {{ inscription.students.length }}</span>
+                    </ng-template>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-icon-button (click)="detailInscription(inscription.commission)">
+                        <mat-icon>remove_red_eye</mat-icon>
+                    </button>
+                    <span *ngIf="(role$ | async) === 'Administrador'">
+                        <button mat-icon-button (click)="editInscription(inscription.id)">
+                            <mat-icon>edit</mat-icon>
+                          </button>
+                        <button mat-icon-button (click)="removeInscription(inscription.id)">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </span>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </ng-template>
+</div>
