@@ -42,10 +42,8 @@ export class CoursesService {
     .subscribe(() => this.getCourses())
   }
 
-  deleteCourse(id: number): void {
-    this.httpClient.delete(this.apiBaseCourses + `/${id}`)
-    .pipe(take(1))
-    .subscribe(() => this.getCourses())
+  deleteCourse(id: number): Observable<unknown> {
+    return this.httpClient.delete(this.apiBaseCourses + `/${id}`)
   }
   
   getCoursesList(): Observable<Course[]> {

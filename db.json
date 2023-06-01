@@ -57,12 +57,6 @@
       "duration": "3 meses"
     },
     {
-      "id": 2,
-      "courseName": "Node JS",
-      "description": "Es un entorno controlado por eventos diseñado para crear aplicaciones escalables, permitiéndote establecer y gestionar múltiples conexiones al mismo tiempo. Gracias a esta característica, no tienes que preocuparte con el bloqueo de procesos, pues no hay bloqueos.",
-      "duration": "3 meses"
-    },
-    {
       "id": 3,
       "courseName": "Ciberseguridad",
       "description": "Gestiona todos los riesgos que pueden presentarse en tu organización. Visualiza de manera clara el número de riegos y toma decisiones oportunas. Conoce Más. Prueba gratis por 15 días. Sin Tarjeta de crédito. Conferencias Virtuales. Escuela Gestión Riesgos.",

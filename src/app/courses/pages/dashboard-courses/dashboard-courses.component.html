@@ -4,12 +4,12 @@
       Añadir Curso
     </button>
   
-    <div class="message-empty-table" *ngIf="courses.length === 0; else table">
+    <div class="message-empty-table" *ngIf="state.courses.length === 0; else table">
       No tiene cursos cargados en el sistema, para agregar utilice el boton "Añadir Curso"
     </div>
     <ng-template #table>
         <app-table-course
-            [items]="courses"
+            [items]="state.courses"
             [isAdmin]="(role$ | async) === 'Administrador'"
             (removeCourse)="removeCourse($event)"
             (editCourse)="editCourse($event)"
