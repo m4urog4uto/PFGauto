@@ -26,14 +26,18 @@ export class CoursesService {
       })
   }
 
-  addCourse(courseValue: Course): void {
-    this.httpClient.post<Course>(
-      this.apiBaseCourses, courseValue
-    )
-    .pipe(take(1))
-    .subscribe(
-      (course) => this.courses$.asObservable().pipe(take(1)).subscribe((courses) => this.courses$.next([ ...courses, course ]))
-    )
+  // addCourse(courseValue: Course): void {
+  //   this.httpClient.post<Course>(
+  //     this.apiBaseCourses, courseValue
+  //   )
+  //   .pipe(take(1))
+  //   .subscribe(
+  //     (course) => this.courses$.asObservable().pipe(take(1)).subscribe((courses) => this.courses$.next([ ...courses, course ]))
+  //   )
+  // }
+
+  addCourse(courseValue: Course): Observable<unknown> {
+    return this.httpClient.post<Course>(this.apiBaseCourses, courseValue)
   }
 
   editCourse(id: number, course: Course): void {

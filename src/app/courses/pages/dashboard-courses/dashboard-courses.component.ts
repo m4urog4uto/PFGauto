@@ -45,8 +45,12 @@ export class DashboardCoursesComponent {
 
     dialogo.afterClosed().subscribe(result => {
       if (result.courseName) {
-        this.state.courses = [ ...this.state.courses, result ];
-        this.coursesService.addCourse(result);
+        // this.state.courses = [ ...this.state.courses, result ];
+        // this.coursesService.addCourse(result);
+
+        this.store.dispatch(CoursesActions.createCourse({
+          data: result
+        }))
       }
     });
   }

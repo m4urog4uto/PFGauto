@@ -46,7 +46,6 @@ export class DashboardUserComponent {
   }
 
   removeUser(id: number): void {
-    console.log(id);
     const userId = this.users.findIndex((obj) => obj.id === id);
     if (userId > -1) {
       this.users.splice(userId, 1);

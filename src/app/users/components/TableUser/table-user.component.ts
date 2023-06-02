@@ -31,7 +31,6 @@ export class TableUserComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.dataSource = new MatTableDataSource(this.items);
-    console.log('dataSource', this.dataSource);
   }
 
   userDetail(id: number): void {

@@ -26,14 +26,14 @@
   "students": [
     {
       "id": 2,
+      "dni": "42121333",
       "name": "Rogelia",
       "surname": "Buendia",
-      "dni": "42121333",
       "email": "rogelia.buendia@gmail.com",
       "phone": 1144322132,
       "courseSelected": [
-        "Node JS",
-        "Angular"
+        "Angular JS",
+        "Ciberseguridad"
       ]
     },
     {
@@ -46,6 +46,17 @@
       "courseSelected": [
         "Ciberseguridad",
         "Node JS"
+      ]
+    },
+    {
+      "id": 398892224,
+      "dni": "42132123",
+      "name": "Mauross",
+      "surname": "Gautoss",
+      "email": "m@m.com",
+      "phone": "1122334455",
+      "courseSelected": [
+        "Ciberseguridad"
       ]
     }
   ],
@@ -75,6 +86,21 @@
       "students": [
         "Rogelia Buendia",
         "Armando Paredes"
+      ]
+    },
+    {
+      "id": 3,
+      "commission": 44123,
+      "courseName": "Ciberseguridad",
+      "mentors": [
+        "Ricardo Moreno",
+        "Sonia Gonzales",
+        "Nicolas Patrizi"
+      ],
+      "students": [
+        "Rogelia Buendia",
+        "Armando Paredes",
+        "Mauross Gautoss"
       ]
     }
   ],

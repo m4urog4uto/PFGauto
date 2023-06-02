@@ -21,6 +21,34 @@ export class CoursesEffects {
     );
   });
 
+  createCourse$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CoursesActions.createCourse),
+      concatMap((action) => 
+        this.coursesService.addCourse(action.data).pipe(
+          map(data => {
+            this.coursesService.getCourses();
+            return CoursesActions.createCourseSuccess({ data })
+          }),
+          catchError(error => of(CoursesActions.createCourseFailure({ error })))
+        ))
+    )
+  });
+
+  editCourse$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CoursesActions.editCourse),
+      concatMap((action) => 
+        this.coursesService.addCourse(action.data).pipe(
+          map(data => {
+            this.coursesService.getCourses();
+            return CoursesActions.editCourseSuccess({ data })
+          }),
+          catchError(error => of(CoursesActions.editCourseFailure({ error })))
+        ))
+    )
+  });
+
   deleteCourse$ = createEffect(() => {
     return this.actions$.pipe(
 
