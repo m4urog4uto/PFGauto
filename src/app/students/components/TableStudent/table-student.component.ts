@@ -35,6 +35,10 @@ export class TableStudentComponent implements OnChanges {
     this.dataSource = new MatTableDataSource(this.items);
   }
 
+  getCoursesName(coursesName: string[]): string[] {
+    return coursesName.length > 0 ? coursesName : ['Sin Asignar'];
+  }
+
   studentDetail(id: number): void {
     this.router.navigate([id], {
       relativeTo: this.activatedRoute,

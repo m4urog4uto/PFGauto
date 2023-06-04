@@ -83,9 +83,9 @@
           <mat-select [formControl]="courseSelectedCtrl" multiple>
             <mat-option *ngFor="let course of coursesList$ | async" [value]="course">{{course}}</mat-option>
           </mat-select>
-          <mat-error *ngFor="let error of courseSelectedCtrl.errors | keyvalue">
-            {{ error | controlErrorMessages }}
-          </mat-error>
+          <div *ngIf="(coursesList$ | async)?.length === 0" class="error-message">
+            ¡No hay cursos para asignar!
+          </div>
         </mat-form-field>
       </div>
     </section>

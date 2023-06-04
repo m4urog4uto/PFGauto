@@ -48,7 +48,7 @@ export class ModalFormStudentComponent {
     this.dniCtrl = new FormControl(dni, [ Validators.required ]);
     this.emailCtrl = new FormControl(email, [ Validators.required, Validators.email ]);
     this.phoneCtrl = new FormControl(phone, [ Validators.required ]);
-    this.courseSelectedCtrl = new FormControl(courseSelected, [ Validators.required ]);
+    this.courseSelectedCtrl = new FormControl(courseSelected);
 
     this.studentForm = this.formBuilder.group({
       id: new FormControl(id, []), 

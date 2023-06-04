@@ -36,7 +36,7 @@ export class DetailsStudentsComponent {
     this.coursesService.getCoursesList()
       .pipe(
         takeUntil(this.destroyed$),
-        map((courses) => courses.filter((course, i) => this.studentDetail?.courseSelected.includes(course.courseName))
+        map((courses) => courses.filter((course) => this.studentDetail?.courseSelected.includes(course.courseName))
       ))
       .subscribe((result) => this.coursesSelected = result)
   }
@@ -51,6 +51,7 @@ export class DetailsStudentsComponent {
       this.coursesSelected = [ ...this.coursesSelected ];
       const coursesSelectedNames = this.coursesSelected.map((csn) => csn.courseName);
       this.studentDetail.courseSelected = coursesSelectedNames;
+      this.studentService.editStudent(parseInt(this.activatedRoute.snapshot.params['studentId']), this.studentDetail);
     }
   }
 

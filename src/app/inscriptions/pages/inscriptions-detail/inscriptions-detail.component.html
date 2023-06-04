@@ -1,18 +1,20 @@
 <div *ngIf="inscriptionsDetail && coursesAssigned" class="app-inscriptions-detail">
-    <h1>Detalle Curso Inscripto</h1>
-    <hr>
-    <h2>{{ inscriptionsDetail.courseName }}</h2>
-    <h5>Comisión: #{{ inscriptionsDetail.commission }}</h5>
-    <h5>Duración: {{ coursesAssigned.duration }}</h5>
+    <h1>{{ inscriptionsDetail.courseName }}</h1>
     <hr>
     <div>
-        <h6>Mentores Asignados</h6>
+        <h5>Detalle Curso Inscripto</h5>
+        <div><b>Comisión:</b> #{{ inscriptionsDetail.commission }}</div>
+        <div><b>Duración:</b> {{ coursesAssigned.duration }}</div>
+    </div>
+    <hr>
+    <div>
+        <h5>Mentores Asignados</h5>
         <ul>
             <li *ngFor="let mentors of inscriptionsDetail.mentors">{{ mentors }}</li>
         </ul>
     </div>
     <div>
-        <h6>Estudiantes Asignados</h6>
+        <h5>Estudiantes Asignados</h5>
         <div class="message-empty-table" *ngIf="studentsAssigned.length === 0; else studentsAssig">
             No tiene alumnos cargados en al curso
           </div>

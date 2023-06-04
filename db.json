@@ -12,95 +12,80 @@
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Pablo",
-      "surname": "Garcia",
-      "user": "pablito",
+      "name": "Ricardo",
+      "surname": "Lopez",
+      "user": "riqui",
       "password": "123456",
       "confirmPassword": "123456",
-      "email": "p@g.com",
+      "email": "ricardo.lopez@gmail.com",
       "role": "Cliente",
-      "token": "Zsdw1weqweewqeq.9379195443.376078"
+      "token": "Zsdw1weqweewqeq.5079257413.305389",
+      "id": 2
     }
   ],
   "students": [
     {
-      "id": 2,
-      "dni": "42121333",
-      "name": "Rogelia",
-      "surname": "Buendia",
-      "email": "rogelia.buendia@gmail.com",
-      "phone": 1144322132,
-      "courseSelected": [
-        "Angular JS",
-        "Ciberseguridad"
-      ]
-    },
-    {
-      "id": 398892223,
-      "name": "Armando",
-      "surname": "Paredes",
-      "dni": "398892223",
-      "email": "armando.paredes@gmail.com",
-      "phone": 1132114332,
-      "courseSelected": [
-        "Ciberseguridad",
-        "Node JS"
-      ]
-    },
-    {
-      "id": 398892224,
-      "dni": "42132123",
-      "name": "Mauross",
-      "surname": "Gautoss",
-      "email": "m@m.com",
+      "id": 1,
+      "dni": "41123321",
+      "name": "Pablo",
+      "surname": "Perez",
+      "email": "pablo.perez@gmail.com",
       "phone": "1122334455",
       "courseSelected": [
-        "Ciberseguridad"
+        "Angular"
+      ]
+    },
+    {
+      "id": 2,
+      "dni": "42123321",
+      "name": "Agustin",
+      "surname": "Hernandez",
+      "email": "agus.hernandez@gmail.com",
+      "phone": "1122334455",
+      "courseSelected": [
+        "Angular",
+        "React JS"
       ]
     }
   ],
   "courses": [
     {
       "id": 1,
-      "courseName": "Angular JS",
-      "description": "Framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenidos por Google, que se utiliza para crear y mantener aplicaciones web de una sola página",
+      "courseName": "Angular",
+      "description": "Es un Framework de JavaScript de código abierto escrito en TypeScript. Su objetivo principal es desarrollar aplicaciones de una sola página. Google se encarga del mantenimiento y constantes actualizaciones de mejoras para este framework.",
       "duration": "3 meses"
     },
     {
-      "id": 3,
-      "courseName": "Ciberseguridad",
-      "description": "Gestiona todos los riesgos que pueden presentarse en tu organización. Visualiza de manera clara el número de riegos y toma decisiones oportunas. Conoce Más. Prueba gratis por 15 días. Sin Tarjeta de crédito. Conferencias Virtuales. Escuela Gestión Riesgos.",
+      "id": 2,
+      "courseName": "React JS",
+      "description": "Es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página.",
       "duration": "3 meses"
     }
   ],
   "inscriptions": [
     {
-      "id": 2,
-      "commission": 32123,
-      "courseName": "Node JS",
+      "id": 1,
+      "commission": 41111,
+      "courseName": "Angular",
       "mentors": [
         "Carlos Garcia",
         "Yamila Gimenez"
       ],
       "students": [
-        "Rogelia Buendia",
-        "Armando Paredes"
+        "Pablo Perez",
+        "Agustin Hernandez"
       ]
     },
     {
-      "id": 3,
-      "commission": 44123,
-      "courseName": "Ciberseguridad",
+      "id": 2,
+      "commission": 42222,
+      "courseName": "React JS",
       "mentors": [
-        "Ricardo Moreno",
-        "Sonia Gonzales",
-        "Nicolas Patrizi"
+        "Juan Lopez",
+        "Ricardo Moreno"
       ],
       "students": [
-        "Rogelia Buendia",
-        "Armando Paredes",
-        "Mauross Gautoss"
+        "Agustin Hernandez"
       ]
     }
   ],

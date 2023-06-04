@@ -1,27 +1,42 @@
 # PFGauto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+Bienvenido a mi Proyecto Final del Curso de Angular.
 
-## Development server
+A continuación pongo algunas cosas a tener en cuenta.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### INICIAR PROYECTO
 
-## Code scaffolding
+Antes de iniciar el proyecto debe correr el comando
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    json-server --watch db.json
 
-## Build
+Luego para correrlo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ng s -o
 
-## Running unit tests
+### CREDENCIALES
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para ingresar como Administrador puede ingresar con el siguiente usuario:
 
-## Running end-to-end tests
+User: admin
+Password: admin
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para ingresar como Cliente puede hacerlo con el siguiente usuario:
 
-## Further help
+User: riqui
+Password: 123456
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### SOBRE EL PROYECTO
+
+Es un proyecto sobre manejo de cursos, inscripciones, alumnos y usuarios para el caso de administrador.
+
+Está separado en modulos con sus respectivos servicios y el lazy loading correspondiente.
+
+En el modulo de cursos está implementado lo que es REDUX con todas sus funcionalidades correspondientes.
+
+Unit Testing por el momento solo tenemos en el login de usuario.
+
+SALUDOS!!
+
+
+

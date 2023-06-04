@@ -28,10 +28,12 @@
                 {{course}}
               </mat-option>
             </mat-select>
-
             <mat-error *ngFor="let error of courseNameCtrl.errors | keyvalue">
               {{ error | controlErrorMessages }}
             </mat-error>
+            <div *ngIf="(coursesList$ | async)?.length === 0" class="error-message">
+              ¡No hay cursos para asignar! <br> Debe agregar uno al menos para continuar.
+            </div>
         </mat-form-field>
 
       </div>

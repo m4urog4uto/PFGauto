@@ -8,7 +8,7 @@ import { Observable, map } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { CoursesActions } from '../../store/courses.actions';
 import { selectCoursesState } from '../../store/courses.selectors';
-import { State, initialState } from '../../store/courses.reducer';
+import { initialState } from '../../store/courses.reducer';
 
 @Component({
   selector: 'app-dashboard-courses',
@@ -16,7 +16,7 @@ import { State, initialState } from '../../store/courses.reducer';
   styleUrls: ['./dashboard-courses.component.css']
 })
 export class DashboardCoursesComponent {
-  state: State = initialState;
+  courses: Course[] = [];
   role$: Observable<string | undefined>;
 
   constructor(
@@ -26,10 +26,7 @@ export class DashboardCoursesComponent {
     private store: Store
   ) {
     this.role$ = this.authService.getAuthUser().pipe(map((user) => user?.role));
-    // this.coursesService.getCoursesList().subscribe((courses) => this.courses = courses);
-    this.store.dispatch(CoursesActions.loadCourses())
-
-    this.store.select(selectCoursesState).subscribe((data) => this.state = data)
+    this.coursesService.getCoursesList().subscribe((courses) => this.courses = courses);
   }
 
   addCourse(): void {
@@ -44,10 +41,7 @@ export class DashboardCoursesComponent {
     });
 
     dialogo.afterClosed().subscribe(result => {
-      if (result.courseName) {
-        // this.state.courses = [ ...this.state.courses, result ];
-        // this.coursesService.addCourse(result);
-
+      if (result) {
         this.store.dispatch(CoursesActions.createCourse({
           data: result
         }))
@@ -56,19 +50,12 @@ export class DashboardCoursesComponent {
   }
 
   removeCourse(id: number): void {
-    // const studentId = this.state.courses.findIndex((obj) => obj.id === id);
-    // if (studentId > -1) {
-    //   this.state.courses.splice(studentId, 1);
-    // };
-
-    // this.state.courses = [ ...this.state.courses ];
-    // this.coursesService.deleteCourse(id);
-
     this.store.dispatch(CoursesActions.deleteCourse({ id }))
   }
 
   editCourse(id: number): void {
-    const studentId = this.state.courses.find((obj) => obj.id === id);
+    debugger;
+    const studentId = this.courses.find((obj) => obj.id === id);
     if (studentId) {
       const { id, courseName, description, duration } = studentId;
       const dialogo = this.dialogService.open(ModalFormCourseComponent, {
@@ -84,14 +71,7 @@ export class DashboardCoursesComponent {
 
       dialogo.afterClosed().subscribe((result: Course) => {
         if (result) {
-          const newAlumnosList = this.state.courses.map(obj => {
-            if (obj.id === result.id) {
-              return { ...obj, ...result }
-            }
-            return obj;
-          })
-          this.state.courses = [ ...newAlumnosList ];
-          this.coursesService.editCourse(id, result);
+          this.store.dispatch(CoursesActions.editCourse({ id, data: result }))
         }
       });
 

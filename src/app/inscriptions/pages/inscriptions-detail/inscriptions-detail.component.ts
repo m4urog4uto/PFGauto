@@ -41,10 +41,11 @@ export class InscriptionsDetailComponent implements OnDestroy {
 
     this.coursesService.getCoursesList()
       .pipe(
-        takeUntil(this.destroyed$),
-        map((courses) => courses.find((course) => course.courseName = String(this.inscriptionsDetail?.courseName))
-      ))
-      .subscribe((result) => this.coursesAssigned = result)
+        takeUntil(this.destroyed$)
+      )
+      .subscribe((courses) => {
+        this.coursesAssigned = courses.find((course) => course.courseName === this.inscriptionsDetail?.courseName)
+      })
     
   }
 
@@ -63,6 +64,7 @@ export class InscriptionsDetailComponent implements OnDestroy {
       this.studentsAssigned = [ ...this.studentsAssigned ];
       const studentsAssignedNames = this.studentsAssigned.map((san) => `${san.name} ${san.surname}`)
       this.inscriptionsDetail.students = studentsAssignedNames;
+      this.inscriptionsService.editInscription(this.inscriptionsDetail.id, this.inscriptionsDetail);
     }
   }
 

@@ -27,7 +27,6 @@ export class DashboardStudentsComponent {
       .subscribe((students: Student[]) => this.students = students)
   }
 
-
   addStudentForm(): void {
     const dialogo = this.dialogService.open(ModalFormStudentComponent, {
       data: {
@@ -43,7 +42,7 @@ export class DashboardStudentsComponent {
     });
 
     dialogo.afterClosed().subscribe(result => {
-      if (result.dni) {
+      if (result) {
         this.students = [ ...this.students, result ];
         this.studentService.addStudent(result);
       }

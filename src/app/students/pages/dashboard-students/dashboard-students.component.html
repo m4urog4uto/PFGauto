@@ -1,11 +1,11 @@
 <div class="app-layout-container">
-    <button class="btn-add" color="primary" mat-raised-button (click)="addStudentForm()">
+    <button class="btn-add" color="primary" mat-raised-button (click)="addStudentForm()" *ngIf="(role$ | async) === 'Administrador'">
       <mat-icon>add</mat-icon>
       Añadir Alumno
     </button>
 
     <div class="message-empty-table" *ngIf="students.length === 0; else table">
-      No tiene alumnos cargados en el sistema, para agregar utilice el boton "Añadir Alumno"
+      No tiene alumnos cargados en el sistema<ng-container *ngIf="(role$ | async) === 'Administrador'">, para agregar utilice el boton "Añadir Alumno"</ng-container>
     </div>
     <ng-template #table>
       <app-table

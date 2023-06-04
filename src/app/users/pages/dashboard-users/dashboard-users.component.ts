@@ -38,7 +38,7 @@ export class DashboardUserComponent {
     });
 
     dialogo.afterClosed().subscribe(result => {
-      if (result.name) {
+      if (result) {
         this.userService.addUser(result);
         this.users = [ ...this.users, result ];
       }

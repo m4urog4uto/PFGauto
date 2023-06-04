@@ -1,11 +1,11 @@
 <div class="app-layout-container">
-    <button class="btn-add" color="primary" mat-raised-button (click)="addInscriptionForm()">
+    <button class="btn-add" color="primary" mat-raised-button (click)="addInscriptionForm()" *ngIf="(role$ | async) === 'Administrador'">
       <mat-icon>add</mat-icon>
       Añadir Inscripcion
     </button>
   
     <div class="message-empty-cards" *ngIf="inscriptions.length === 0; else cards">
-      No tiene inscripciones cargadas en el sistema, para agregar utilice el boton "Añadir Inscripción"
+      No tiene inscripciones cargadas en el sistema <ng-container *ngIf="(role$ | async) === 'Administrador'">, para agregar utilice el boton "Añadir Inscripción"</ng-container>
     </div>
     <ng-template #cards>
         <div class="container-cards">

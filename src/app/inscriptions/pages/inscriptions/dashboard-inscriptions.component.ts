@@ -43,7 +43,7 @@ export class DashboardInscriptionsComponent {
     });
 
     dialogo.afterClosed().subscribe(result => {
-      if (result.courseName) {
+      if (result) {
         this.inscriptions = [ ...this.inscriptions, result ];
         this.inscriptionsService.addInscription(result);
       }
@@ -68,13 +68,6 @@ export class DashboardInscriptionsComponent {
 
       dialogo.afterClosed().subscribe((result: Inscription) => {
         if (result) {
-          // const newAlumnosList = this.inscriptions.map(obj => {
-          //   if (obj.id === result.id) {
-          //     return { ...obj, ...result }
-          //   }
-          //   return obj;
-          // })
-          // this.inscriptions = [ ...this.inscriptions, result ];
           this.inscriptionsService.editInscription(id, result);
         }
       });
